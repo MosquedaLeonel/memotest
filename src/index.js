@@ -10,3 +10,6 @@ let score = 0;
 let count = 0;
 let firstCard = null;
 
+btnStart.onclick = setUpGame;
+function setUpGame(){
+}
