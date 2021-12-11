@@ -20,4 +20,16 @@ function resetGame () {
     count = 0;
     firstCard = null;
 
+    if ($cards[0].hasChildNodes()) {
+        removeCards();
+    }
+}
+
+
+function removeCards () {
+    for (let card of $cards) {
+        card.firstElementChild.remove();
+    }
+
+    setUpGame();
 }
