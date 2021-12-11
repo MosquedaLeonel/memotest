@@ -16,6 +16,7 @@ function setUpGame(){
     const imagesDuplicate = imagesBase.concat(imagesBase);
     const imagesShuffle = shuffleImages(imagesDuplicate);
     boardEnabled(); 
+    configureDashboard(imagesShuffle);
 function shuffleImages (duplicateImages) {
     const images = duplicateImages;
     for (let i = images.length - 1; i > 0; i--) {
@@ -30,6 +31,21 @@ function shuffleImages (duplicateImages) {
 function boardEnabled() {
 for (let card of $cards) {
         card.classList.replace('disabled', 'enabled');
+    }
+}
+
+
+function configureDashboard(images) {
+
+    for (let i = 0; i < images.length; i++) {
+        const card = $cards[i];
+        
+        const newImageCard = document.createElement('img');
+        newImageCard.src = `assets/images/${images[i]}.png`;
+        newImageCard.id = `${images[i]}`;
+        newImageCard.classList.add('card-image', 'hidden-card');
+
+        card.appendChild(newImageCard);
     }
 }
 
