@@ -15,6 +15,7 @@ function setUpGame(){
     resetGame();
     const imagesDuplicate = imagesBase.concat(imagesBase);
     const imagesShuffle = shuffleImages(imagesDuplicate);
+    boardEnabled(); 
 function shuffleImages (duplicateImages) {
     const images = duplicateImages;
     for (let i = images.length - 1; i > 0; i--) {
@@ -24,6 +25,14 @@ function shuffleImages (duplicateImages) {
     
     return images;
 }
+
+
+function boardEnabled() {
+for (let card of $cards) {
+        card.classList.replace('disabled', 'enabled');
+    }
+}
+
 
 }
 function resetGame () {
