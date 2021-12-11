@@ -12,4 +12,12 @@ let firstCard = null;
 
 btnStart.onclick = setUpGame;
 function setUpGame(){
+    resetGame();
+}
+function resetGame () {
+    score = 0;
+    handleScore(score);
+    count = 0;
+    firstCard = null;
+
 }
