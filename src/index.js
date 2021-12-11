@@ -17,6 +17,10 @@ function setUpGame(){
     const imagesShuffle = shuffleImages(imagesDuplicate);
     boardEnabled(); 
     configureDashboard(imagesShuffle);
+    handleEvents();
+}
+
+
 function shuffleImages (duplicateImages) {
     const images = duplicateImages;
     for (let i = images.length - 1; i > 0; i--) {
@@ -46,6 +50,15 @@ function configureDashboard(images) {
         newImageCard.classList.add('card-image', 'hidden-card');
 
         card.appendChild(newImageCard);
+    }
+}
+
+
+function handleEvents(){
+    $boardGame.onclick = function(e){
+
+        const $actualCard = e.target;
+        
     }
 }
 
