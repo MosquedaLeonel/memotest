@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-width: 600px;
+    margin: 0;
+    background-color: mediumslateblue;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: sans-serif;
+}
+
+.sidebar {
+    width: 50%;
+    min-width: 300px;
+    position: relative;
+    padding: 2em;
+    font-size: 15px;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -0.5rem;
+    justify-content: space-between;
+}
+
+.title {
+    margin: 0.5rem 0 0;
+    text-transform: uppercase;
+    font-family: sans-serif, serif;
+    font-size: 30px;
+}
+
+.turn-counter {
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    margin-top: 0.5rem;
+    font-size: 15px;
+    user-select: none;
+}
+
+.score-indicator {
+    display: inline-block;
+    width: 160px;
+    line-height: 30px;
+    text-align: center;
+    cursor: default;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.board {
+    position: sticky;
+    top: 1em;
+    width: 40vw;
+    height: 40vw;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: calc(100vh - 2em);
+    max-height: calc(100vh - 2em);
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    border: 12px solid goldenrod;
+    border-radius: 12px;
+    cursor: not-allowed;
+}
+
+
+.overlay {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
+.cards {
+    background: none;
+    box-shadow: inset 2px 2px 0 rgb(255 255 255 / 5%), inset -2px -2px 0 goldenrod;
+}
+
+.controls {
+    margin-top: 2em;
+}
+
+.instructions {
+    font-family: sans-serif;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.view {
+    min-height: 100vh;
+    padding: 1em;
+}
+
+.card-image {
+    max-width: 100%;
+    height: auto;
+    box-shadow: inset 2px 2px 0 rgb(255 255 255 / 5%), inset -2px -2px 0 goldenrod;
+}
+
+.hidden-card {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+
+.show-card {
+    opacity: 1;
+    transition: all 0.3s linear;
+}
+
+.highlight {
+    background-color: silver;
+}
+
+.success {
+    background-color: darkgreen;
+
+}
+
+.error {
+    background-color: darkred;
+
+}
+
+.disabled {
+    background-color: #333;
+    cursor: not-allowed;
+    transition: all 0.3s linear;
+}
+
+.enabled {
+    background-color: #2D208A;
+    cursor: pointer;
+}
+
+.enabled:hover {
+    background-color: #25168C;
+}
+
+
+.oculto {
+    display: none;
+}
+
+.end-game {
+    color: black;
+}
