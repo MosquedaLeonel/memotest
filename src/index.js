@@ -59,7 +59,30 @@ function handleEvents(){
 
         const $actualCard = e.target;
         
+        if (validateClick($actualCard)) {
+                handleClickCard($actualCard);
+        }
     }
+}
+
+
+    }
+}
+
+function validateClick (card) {
+    if (card.classList.contains('board')) {
+        return false;
+    }
+
+    if (card === firstCard) {
+        return false;
+    }
+
+    if (card.parentElement.classList.contains('disabled')) {
+        return false;
+    }
+
+    return true;
 }
 
 
