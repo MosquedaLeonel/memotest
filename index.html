@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Memotest</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/styles.css'>
+</head>
+<body>
+    <section class="sidebar">
+        <div class="header">
+            <div>
+                <h1 class="title">memotest</h1>
+            </div>
+            <div class="turn-counter">
+                <span class="score-indicator">
+                    Score: 00
+                </span>
+            </div>
+        </div>
+        
+        <p class="controls">
+            <button type="button" class="btn btn-success" id="btn-start">Start game</button>
+            <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#instructions" aria-expanded="false" aria-controls="instructions">
+                Instructions
+            </button>
+
+        </p>
+        <div class="collapse instructions" id="instructions">
+            <div class="card card-body">
+                Instructions: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus optio, voluptate nostrum voluptatem aperiam iusto accusamus corrupti. Aspernatur quia accusamus cumque reprehenderit? Quos officiis tenetur natus explicabo ex facere dolorem.
+            </div>
+        </div>
+          
+
+    </section>
+
+    <section class="view">
+        <div class="board" id="board">
+            <div class="overlay">
+                <div class="cards disabled" id="1"></div>
+                <div class="cards disabled" id="2"></div>
+                <div class="cards disabled" id="3"></div>
+                <div class="cards disabled" id="4"></div>
+                <div class="cards disabled" id="5"></div>
+                <div class="cards disabled" id="6"></div>
+                <div class="cards disabled" id="7"></div>
+                <div class="cards disabled" id="8"></div>
+                <div class="cards disabled" id="9"></div>
+                <div class="cards disabled" id="10"></div>
+                <div class="cards disabled" id="11"></div>
+                <div class="cards disabled" id="12"></div>
+                <div class="cards disabled" id="13"></div>
+                <div class="cards disabled" id="14"></div>
+                <div class="cards disabled" id="15"></div>
+                <div class="cards disabled" id="16"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade end-game" id="myModal" tabindex="-1" role="dialog">
+        <class class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title title">memotest</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Your score is: <strong id="score"></strong>.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="btn-restart">Try again</button>
+                </div>
+            </div>
+        </class>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src='src/index.js'></script>
+</body>
+</html>
+
