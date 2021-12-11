@@ -66,6 +66,26 @@ function handleEvents(){
 }
 
 
+function handleClickCard(card) {
+    showCard(card);
+
+    if (firstCard === null) {
+        firstCard = card;
+    } else {
+
+        score++;
+        handleScore(score);
+        
+        if (firstCard.parentElement.id !== card.parentElement.id) {
+            if (card.parentElement.classList.contains('disabled')) {
+                return;
+            }
+            if (checkPair(card)) {
+                handleCoincidence(card);
+            } else {
+                handleError(card);
+            }
+        }
     }
 }
 
@@ -86,7 +106,105 @@ function validateClick (card) {
 }
 
 
+function showCard(card){
+    card.classList.replace('hidden-card', 'show-card');
+    card.classList.add('highlight');
 }
+
+
+function handleScore(score) {
+    const $score = document.querySelector('.score-indicator');
+
+    $score.textContent = `Score: ${score.toString().padStart(2, '0')}`;
+}
+
+
+function checkPair(lastCard) {
+    return firstCard.id === lastCard.id; 
+}
+
+
+function handleCoincidence (actualCard) {
+
+    highlightSuccess(actualCard);
+    
+    setTimeout(function() {
+        disableCards(actualCard);
+        count++;
+        
+        if (checkEndGame(count)) {
+            handleEndGame();
+        } else {
+            firstCard = null;
+        }
+    }, 500);
+}
+
+
+function highlightSuccess (actualCard) {
+    firstCard.classList.replace('highlight' , 'success');
+    actualCard.classList.replace('highlight', 'success');
+}
+
+
+function disableCards (actualCard) {
+    firstCard.classList.toggle('success');
+    firstCard.parentElement.classList.replace('enabled', 'disabled');
+
+    actualCard.classList.toggle('success');
+    actualCard.parentElement.classList.replace('enabled', 'disabled');
+}
+
+
+function checkEndGame () {
+    return count === imagesBase.length;
+}
+
+
+function handleEndGame() {
+    setTimeout(function(){
+        setScore();
+        showModal();
+    }, 1000)
+}
+
+
+function setScore () {
+    const $score = document.querySelector('#score');
+    $score.textContent = score;
+}
+
+
+function showModal (){
+    $('#myModal').modal('show');
+}
+
+
+function handleError(actualCard) {
+    highlightError(actualCard);
+    setTimeout(function() {
+        hideCards(actualCard);
+    }, 500);
+}
+
+function highlightError (actualCard) {
+    firstCard.classList.replace('highlight', 'error');
+    actualCard.classList.replace('highlight', 'error');
+    
+}
+
+
+function hideCards(actualCard) {
+        firstCard.classList.toggle('error');
+        firstCard.classList.replace('show-card', 'hidden-card');
+    
+        actualCard.classList.toggle('error');
+        actualCard.classList.replace('show-card', 'hidden-card');    
+
+        firstCard = null;
+}
+
+
 function resetGame () {
     score = 0;
     handleScore(score);
