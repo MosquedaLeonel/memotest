@@ -11,6 +11,8 @@ let count = 0;
 let firstCard = null;
 
 btnStart.onclick = setUpGame;
+btnRestart.onclick = removeCards;
+
 function setUpGame(){
     resetGame();
     const imagesDuplicate = imagesBase.concat(imagesBase);
