@@ -13,6 +13,7 @@ let firstCard = null;
 btnStart.onclick = setUpGame;
 function setUpGame(){
     resetGame();
+    const imagesDuplicate = imagesBase.concat(imagesBase);
 }
 function resetGame () {
     score = 0;
