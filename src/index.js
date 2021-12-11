@@ -14,6 +14,17 @@ btnStart.onclick = setUpGame;
 function setUpGame(){
     resetGame();
     const imagesDuplicate = imagesBase.concat(imagesBase);
+    const imagesShuffle = shuffleImages(imagesDuplicate);
+function shuffleImages (duplicateImages) {
+    const images = duplicateImages;
+    for (let i = images.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [images[i], images[j]] = [images[j], images[i]];
+    }
+    
+    return images;
+}
+
 }
 function resetGame () {
     score = 0;
