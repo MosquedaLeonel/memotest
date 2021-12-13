@@ -94,7 +94,11 @@ body {
 .instructions {
     font-family: sans-serif;
     font-size: 18px;
-    color: rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.instruction {
+    background-color: rgb(29, 29, 122);
 }
 
 .view {
@@ -154,4 +158,38 @@ body {
 
 .end-game {
     color: black;
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        flex-direction: column-reverse;
+        align-items: center;
+        min-width: 100vw;
+    }
+
+    body,
+    .sidebar {
+        font-size: 13px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .view {
+        position: relative;
+        min-height: 0;
+    }
+
+    .header {
+        justify-content: center;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .controls {
+        text-align: center;
+    }
 }
