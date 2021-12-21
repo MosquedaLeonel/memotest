@@ -6,7 +6,7 @@ const imagesBase = ['boston-celtics', 'chicago-bulls', 'golden-state-warriors', 
 const $boardGame = document.querySelector('#board');
 const $cards = $boardGame.querySelectorAll('.cards');
 
-let score = 0;
+let score = 00;
 let count = 0;
 let firstCard = null;
 
@@ -50,6 +50,7 @@ function configureDashboard(images) {
         newImageCard.src = `assets/images/${images[i]}.png`;
         newImageCard.id = `${images[i]}`;
         newImageCard.classList.add('card-image', 'hidden-card');
+        newImageCard.name = `${images[i]}`;
 
         card.appendChild(newImageCard);
     }
